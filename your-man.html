@@ -93,13 +93,15 @@
             '<img src="./img/man (8).jpg" >',
             '<img src="./img/man (9).jpg" >',
             '<img src="./img/man (10).jpg" >',
+            '<img src="./img/man (11).jpg" >',
+            '<img src="./img/man (12).jpg" >',
         ];
 
         // function getRandom(x){
         //     return Math.floor(Math.random()*x)+1;
         // }
 
-        let arrMeal = ['社長', '和尚', '鄰居', '總裁', '學長', '學弟', '老師', '男友', '前任', '同事'];
+        let arrMeal = ['社長', '和尚', '鄰居', '總裁', '學長', '學弟', '老師', '男友', '前任', '同事', '寶貝', '教練'];
         // let idxRandom = Math.floor(Math.random() * 7);
 
 
@@ -127,7 +129,7 @@
         var t;
 
         function count() {
-            let i = Math.floor(Math.random() * 10);
+            let i = Math.floor(Math.random() * 12);
 
             let p = document.getElementById("txt");
             let img = document.getElementById("manImg");
@@ -219,6 +221,7 @@
             '深情的擁抱',
             '一同分享一個布丁',
             '交換內心的小秘密',
+            '十指緊扣著',
         ];
 
         // 時間戳記模組
@@ -265,7 +268,7 @@
             let record = document.getElementById('record');
             let result = document.getElementById('txt');
 
-            let j = Math.floor(Math.random() * 10);
+            let j = Math.floor(Math.random() * 12);
             console.log(loveArr[j])
             // console.log(result) result是印出選擇的結果
             // result.style.color= '#ff0000';
