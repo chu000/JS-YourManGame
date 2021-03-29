@@ -5,184 +5,28 @@
 
     <title>Your man </title>
     <meta name="description" content="選擇你的男人" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta property="og:site_name" content="Your man" />
+    <meta property="fb:app_id" content="APP ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your man" />
+    <meta property="og:description" content="選擇你的男人" />
+    <meta property="og:image" content="https://imgur.com/CfGR0RV" />
+    <meta property="og:url" content="https://chu000.github.io/JS-YourManGame/your-man.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://chu000.github.io/JS-YourManGame/your-man.html">
+    
+    <link rel="stylesheet" href="./css/layout_desktop.css" type="text/css" />
+    <link rel="stylesheet" href="./css/layout_mobile.css" type="text/css" />
 
-        body {
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, 'sans-serif';
-
-        }
-
-        nav,
-        footer {
-            height: 50px;
-            background-color:#ffc4e5;
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
-            line-height: 2.5;
-            font-size: 21px;
-        }
-
-        footer {
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            font-size: 13px;
-            line-height: 4;
-        }
-
-        .containter {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        .selectBox {
-            float: left;
-            width: 600px;
-            margin: 2% auto 0 auto;
-            text-align: center;
-            font-size: 23px;
-            /* font-weight: 600; */
-            color: rgb(90, 90, 90);
-        }
-
-        .manBox {
-            max-width: 400px;
-            box-shadow: 0px 5px 8px rgba(104, 104, 104, 0.363);
-            margin: 6% auto;
-            background-color: #fff;
-            padding: 4% 1% 3% 1%;
-            border-radius: 8px;
-        }
-
-        #manImg {
-            width: 350px;
-            height: 410px;
-            background-color: #d3d3d3;
-
-            margin: 3% auto 5% auto;
-            border-radius: 10px;
-
-            overflow: hidden;
-
-        }
-
-        #manImg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-
-            object-position: top;
-
-            /*這三個要搭配使用 width: 100%;
-            height: 100%; object-fit: cover;
-           */
-        }
-
-        .work {
-
-            display: flex;
-
-            justify-content: center;
-            margin-bottom: 2%;
-
-
-        }
-
-        #txt {
-            margin: 6% 5%;
-
-        }
-
-        .btn {
-
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 0px;
-            background: #ff97cb;
-            /* background: rgb(207, 58, 108); */
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .exchangeBox {
-            margin-top: 8%;
-            font-size: 16px;
-            /* border-bottom: 1px solid #c1c1c1; */
-            /* border-top: 1px solid #c1c1c1; */
-            /* padding: 2%; */
-            margin-bottom: 5%;
-        }
-
-        #change {
-            width: 100px;
-            background: #52cfee;
-            border-radius: 50px;
-            padding: 1% 0;
-            border: 0px;
-            color: #fff;
-            font-size: 17px;
-            margin-bottom: 2%;
-        }
-
-        .boxRecord {
-            width: 400px;
-            margin: 6% auto;
-            text-align: center;
-            float: left;
-
-        }
-
-        .boxRecord p {
-            margin-bottom: 2%;
-            font-size: 16px;
-            /* border-bottom: 1px solid #c1c1c1; */
-            border: 1px solid #c1c1c1;
-            border-radius: 50px;
-            /* background-color: #d3d3d3; */
-            /* padding-bottom: 2%; */
-            padding: 1%;
-            font-weight: 600;
-            color:  #6d6d6d;
-            letter-spacing: 2px;
-        }
-
-        #record {
-            text-align: center;
-            
-        }
-
-        #record li {
-            /* border-bottom: 1px solid #c1c1c1; */
-            list-style: none;
-            white-space: pre;
-            /* 搭配 createTextNode 的斷行\n用的*/
-            font-size: 18px;
-            line-height: 2;
-            color: #797979;
-            padding: 3%;
-        }
-        .love-icon{
-         position:absolute;
-         width: 200px;
-         right: 50px;
-         bottom: 100px;
-         opacity: 0.1;
-         transform: rotate(20deg)
-            
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="1k5n3My8"></script>
+    <!-- <div class="line-it-button" style="display: none;" data-type="share-a" data-lang="zh-Hant" ></div> -->
+    <!-- Load line -->
+    <!-- <script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script> -->
     <nav>今晚，我想來點</nav>
     <div class="containter">
 
@@ -192,6 +36,7 @@
                 <div id="manImg">
 
                 </div>
+                <!-- <div id="manTxt"> </div> -->
                 <div class="work">
 
                     <button onclick="startCount()" id="btn_start" class="btn">換一個</button>
@@ -216,23 +61,33 @@
             </ul>
         </div>
     </div>
-  <img class="love-icon" src="/javascript-uiux-class-main/img/love.png" alt="">
-    <footer>（圖片轉載自網路）</footer>
+    
+    <footer>（圖片轉載自網路）<img class="love-icon" src="/img/love.png" alt="">
+        <div id="share">
+        <div class="fb-share-button" data-href="https://chu000.github.io/JS-YourManGame/your-man.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div>
+    </div>
+    </footer>
+
+    <!-- fb分享 -->
+  
+
 
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="RehIC4y6"></script>
+    <!-- line分享 -->
+    <!-- <a href="javascript: void(window.open(&apos;https://lineit.line.me/share/ui?url=&apos; .concat(encodeURIComponent(location.href)) ));" title="分享給 LINE 好友"><img alt="分享給LINE好友 !" height="40" src="https://1.bp.blogspot.com/-FvoBw8lnlC8/WHgA91RmxiI/AAAAAAAAIvA/CazIGx6Jlp8PJ4pE40kt2XMxwFmeBSdjgCLcB/s1600/168x40.png" width="168" /></a> -->
     <script>
 
 
-        let arrManPic = ['<img src="/javascript-uiux-class-main/img/man (1).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (2).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (3).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (4).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (5).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (6).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (7).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (8).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (9).jpg" >',
-            '<img src="/javascript-uiux-class-main/img/man (10).jpg" >',
+        let arrManPic = ['<img src="/img/man (1).jpg" >',
+            '<img src="/img/man (2).jpg" >',
+            '<img src="/img/man (3).jpg" >',
+            '<img src="/img/man (4).jpg" >',
+            '<img src="/img/man (5).jpg" >',
+            '<img src="/img/man (6).jpg" >',
+            '<img src="/img/man (7).jpg" >',
+            '<img src="/img/man (8).jpg" >',
+            '<img src="/img/man (9).jpg" >',
+            '<img src="/img/man (10).jpg" >',
         ];
 
         // function getRandom(x){
@@ -312,7 +167,7 @@
         //     btnColor[c].addEventListener('mouseout', function (event) {
         //         this.style.backgroundColor = '#ff97cb';
         //     })
-            
+
 
         // }
 
@@ -401,7 +256,7 @@
 
 
 
-            // document.write(`${year}-${month}-${day} ${hour}:${minute}:${second}`);   
+            // let manTxt = document.getElementById('manTxt')
             let record = document.getElementById('record');
             let result = document.getElementById('txt');
 
@@ -410,12 +265,13 @@
             // console.log(result) result是印出選擇的結果
             // result.style.color= '#ff0000';
             var newList = document.createElement('li');
-           
+
             var textNode = document.createTextNode(`${year}-${month}-${day} ${hour}:${minute}:${second} \n 與 ${result.innerText} ${loveArr[j]}`)
+            // manTxt.innerText = '與' + String(result.innerText) + String(loveArr[j]);
             // var textNode = document.createTextNode(year+"-"+month+"-"+day +hour+":"+{minute}+":"+second+ )
             //  上述不能僅寫${result}他只會找到元素標籤 ，要寫 ${result.innerText} 
             newList.appendChild(textNode);
-            
+
             newList.style.borderBottom = '1px solid #e6e6e6'
             record.appendChild(newList);
 

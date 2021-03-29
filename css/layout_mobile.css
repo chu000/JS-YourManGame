@@ -1,0 +1,80 @@
+@media(max-width:600px){
+    nav,footer {
+
+
+        font-weight: 600;
+        line-height: 2;
+        font-size: 18px;
+    }
+    
+    footer {
+  
+        font-size: 13px;
+        line-height: 3;
+    }
+    .manBox {
+        max-width: 320px;
+        box-shadow:none;
+        margin: 4% auto;
+        background-color: #fff;
+        padding:0;
+        border-radius: 0;
+    }
+    
+    #manImg {
+        max-width: 320px;
+        height: 410px;
+        background-color: #fff;
+    
+        margin: 3% auto 5% auto;
+        border-radius: 10px;
+    
+        overflow: hidden;
+    
+    }
+    .exchangeBox {
+        margin-top: 5%;
+        font-size: 16px;
+  
+        margin-bottom: 5%;
+    }
+    
+    #change {
+        width: 120px;
+        font-size: 16px;
+      
+    }
+    
+.boxRecord {
+    max-width: 320px;
+    margin: 2% auto;
+    text-align: center;
+    /* float: left; */
+    display: block;
+
+}
+
+    .boxRecord p {
+        max-width: 120px;
+        margin: 0 auto;
+        margin-bottom: 2% ;
+        font-size: 16px;
+        /* border-bottom: 1px solid #c1c1c1; */
+        border: 1px solid #cccccc;
+        border-radius: 50px;
+        /* background-color: #d3d3d3; */
+        /* padding-bottom: 2%; */
+        padding: 1%;
+        /* font-weight: 600; */
+        color: #cccccc;
+        letter-spacing: 2px;
+    }
+    .love-icon {
+      display: none;
+        /* max-width: 100px;
+        right: 20px;
+        bottom: 50px; */
+    
+    }
+    
+}
