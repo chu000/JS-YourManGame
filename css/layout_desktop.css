@@ -28,10 +28,13 @@ footer {
 margin-top: 8%;
     position: fixed;
     bottom: 0;
-    font-size: 13px;
-    line-height: 4;
+    font-size: 15px;
+    line-height: 3;
+    text-align: left;
 }
-
+footer p{
+    margin-left: 2%;
+}
 .containter {
     max-width: 1200px;
     margin: 0 auto;
@@ -184,7 +187,16 @@ margin-top: 8%;
 }
 #share{
     position: fixed;
-    right: 20px;
-    bottom: 10px;
+    right: 15px;
+    bottom: 9px;
+    
 }
 
+.line img{
+    position: absolute;
+    right: 70PX;
+    bottom: 0;
+    max-width: 88px;
+    max-height: 26px;
+
+}
