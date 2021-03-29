@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Your man </title>
+    <meta name="description" content="選擇你的男人" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, 'sans-serif';
+
+        }
+
+        nav,
+        footer {
+            height: 50px;
+            background-color:#ffc4e5;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            line-height: 2.5;
+            font-size: 21px;
+        }
+
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            font-size: 13px;
+            line-height: 4;
+        }
+
+        .containter {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .selectBox {
+            float: left;
+            width: 600px;
+            margin: 2% auto 0 auto;
+            text-align: center;
+            font-size: 23px;
+            /* font-weight: 600; */
+            color: rgb(90, 90, 90);
+        }
+
+        .manBox {
+            max-width: 400px;
+            box-shadow: 0px 5px 8px rgba(104, 104, 104, 0.363);
+            margin: 6% auto;
+            background-color: #fff;
+            padding: 4% 1% 3% 1%;
+            border-radius: 8px;
+        }
+
+        #manImg {
+            width: 350px;
+            height: 410px;
+            background-color: #d3d3d3;
+
+            margin: 3% auto 5% auto;
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+        #manImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            object-position: top;
+
+            /*這三個要搭配使用 width: 100%;
+            height: 100%; object-fit: cover;
+           */
+        }
+
+        .work {
+
+            display: flex;
+
+            justify-content: center;
+            margin-bottom: 2%;
+
+
+        }
+
+        #txt {
+            margin: 6% 5%;
+
+        }
+
+        .btn {
+
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 0px;
+            background: #ff97cb;
+            /* background: rgb(207, 58, 108); */
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .exchangeBox {
+            margin-top: 8%;
+            font-size: 16px;
+            /* border-bottom: 1px solid #c1c1c1; */
+            /* border-top: 1px solid #c1c1c1; */
+            /* padding: 2%; */
+            margin-bottom: 5%;
+        }
+
+        #change {
+            width: 100px;
+            background: #52cfee;
+            border-radius: 50px;
+            padding: 1% 0;
+            border: 0px;
+            color: #fff;
+            font-size: 17px;
+            margin-bottom: 2%;
+        }
+
+        .boxRecord {
+            width: 400px;
+            margin: 6% auto;
+            text-align: center;
+            float: left;
+
+        }
+
+        .boxRecord p {
+            margin-bottom: 2%;
+            font-size: 16px;
+            /* border-bottom: 1px solid #c1c1c1; */
+            border: 1px solid #c1c1c1;
+            border-radius: 50px;
+            /* background-color: #d3d3d3; */
+            /* padding-bottom: 2%; */
+            padding: 1%;
+            font-weight: 600;
+            color:  #6d6d6d;
+            letter-spacing: 2px;
+        }
+
+        #record {
+            text-align: center;
+            
+        }
+
+        #record li {
+            /* border-bottom: 1px solid #c1c1c1; */
+            list-style: none;
+            white-space: pre;
+            /* 搭配 createTextNode 的斷行\n用的*/
+            font-size: 18px;
+            line-height: 2;
+            color: #797979;
+            padding: 3%;
+        }
+        .love-icon{
+         position:absolute;
+         width: 200px;
+         right: 50px;
+         bottom: 100px;
+         opacity: 0.1;
+         transform: rotate(20deg)
+            
+        }
+    </style>
+</head>
+
+<body>
+    <nav>今晚，我想來點</nav>
+    <div class="containter">
+
+        <div class="selectBox">
+            <div class="manBox">
+                <!-- <p>今晚，我想來點</p> -->
+                <div id="manImg">
+
+                </div>
+                <div class="work">
+
+                    <button onclick="startCount()" id="btn_start" class="btn">換一個</button>
+                    <p id="txt"></p>
+                    <button onclick="stopCount()" id="btn_end" class="btn">停止</button>
+                </div>
+            </div>
+            <div class="exchangeBox">
+
+                <button id="change">我要兌換
+
+                </button>
+                <p>剩餘的兌換卷 : <span id="haveNum">5</span> </p>
+            </div>
+        </div>
+
+
+        <div class="boxRecord">
+            <p>兌換紀錄</p>
+            <ul id="record">
+
+            </ul>
+        </div>
+    </div>
+  <img class="love-icon" src="/javascript-uiux-class-main/img/love.png" alt="">
+    <footer>（圖片轉載自網路）</footer>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="RehIC4y6"></script>
+    <script>
+
+
+        let arrManPic = ['<img src="/javascript-uiux-class-main/img/man (1).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (2).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (3).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (4).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (5).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (6).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (7).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (8).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (9).jpg" >',
+            '<img src="/javascript-uiux-class-main/img/man (10).jpg" >',
+        ];
+
+        // function getRandom(x){
+        //     return Math.floor(Math.random()*x)+1;
+        // }
+
+        let arrMeal = ['社長', '和尚', '鄰居', '總裁', '學長', '學弟', '老師', '男友', '前任', '同事'];
+        // let idxRandom = Math.floor(Math.random() * 7);
+
+
+        //作為 clearInterval() 用的變數
+
+        // document.write(`我可以選擇的男人有: <br />`);
+        // for (let i = 0; i<arrMeal.length;i++){
+        //     document.write('● ' + arrMeal[i] + '<br />');
+        // }
+
+        // }
+
+
+        // for (i =0; i<=6;i++){
+        // let num = getRandom();
+        // if (arrMeal.indexOf(i) > 6){
+        //     i=0;
+        // }
+        // console.log(i)
+
+
+
+
+        var i;
+        var t;
+
+        function count() {
+            let i = Math.floor(Math.random() * 10);
+
+            let p = document.getElementById("txt");
+            let img = document.getElementById("manImg");
+            //   另一種
+            //   let img = document.createElement("img");
+            //     img.setAttribute("src",arrManPic[i]);
+            // li.appendChild(img);
+
+            img.innerHTML = `${arrManPic[i]}`;
+            p.innerText = `${arrMeal[i]}`;
+
+
+
+        }
+
+        count();
+
+        function startCount() {
+            t = setInterval(function () { count() }, 100);
+            //  setInterval(function () { count() }, 300);
+            document.getElementById("btn_start").setAttribute("disabled", true);
+
+
+            document.getElementById("btn_end").removeAttribute("disabled");
+        }
+
+        function stopCount() {
+
+            clearInterval(t);
+            document.getElementById("btn_start").removeAttribute("disabled");
+
+            document.getElementById("btn_end").setAttribute("disabled", true);
+        }
+
+        //更改btn 滑鼠移入移出的樣式，querySelector只能選一個，querySelectorAll可以多個(但因為她是產出陣列，必須給他有第幾個標示)
+        // let btnColor = document.querySelectorAll('.btn');
+        // let c;
+        // for (let c = 0; c <= 1; c++) {
+        //     btnColor[c].addEventListener('mousemove', function (event) {
+        //         this.style.backgroundColor = '#f565ad';
+        //     })
+        //     btnColor[c].addEventListener('mouseout', function (event) {
+        //         this.style.backgroundColor = '#ff97cb';
+        //     })
+            
+
+        // }
+
+
+
+
+
+        // 扣卷
+        let haveNum = document.getElementById('haveNum');
+        changeNum = 5; //目前changeNum 跟html的p 的數字都寫死 未來有後端資料庫紀錄可帶入
+        document.getElementById('change').addEventListener('click', function (event) {
+            //跳出文字訊息
+            // alert(this.innerText);
+
+            //修改文字
+            // this.innerText = '已兌換';
+            // this.style.backgroundColor = '#c1c1c1';
+
+            changeNum -= 1;
+            haveNum.innerText = changeNum;
+            // record.appendChild(newList+arrMeal[i])
+            useTime();
+
+            // 扣完卷 顏色變 按鈕不再執行
+            if (changeNum == 0) {
+                this.innerText = '已兌換';
+                this.style.backgroundColor = '#c1c1c1';
+                this.setAttribute("disabled", true);
+            } else {
+                this.innerText = '我要兌換';
+                this.style.backgroundColor = '#52cfee';
+            }
+
+        });
+        // 情境文字
+        var j;
+        let loveArr = ['看了一場浪漫的電影',
+            '漫步在雨中',
+            '一起耍廢在沙發上',
+            '享用美味的燭光晚餐',
+            '在山上眺望夜景',
+            '在沙灘散步，數著星星',
+            '拿枕頭互打嘻鬧',
+            '深情的擁抱',
+            '一同分享一個布丁',
+            '交換內心的小秘密',
+        ];
+
+        // 時間戳記模組
+
+        function useTime() {
+
+            let date = new Date();
+            let year, month, day, hour, minute, second;
+
+            year = date.getFullYear()
+
+            if ((date.getMonth() + 1) < 10) {
+                month = '0' + (date.getMonth() + 1);
+            } else {
+                month = '0' + (date.getMonth() + 1);
+            }
+
+            if (date.getDate() < 10) {
+                day = '0' + date.getDate();
+            } else {
+                day = date.getDate();
+            };
+
+            if (date.getHours() < 10) {
+                hour = '0' + date.getHours();
+            } else {
+                hour = date.getHours();
+            };
+
+            if (date.getMinutes() < 10) {
+                minute = '0' + date.getMinutes();
+            } else {
+                minute = date.getMinutes();
+            };
+            if (date.getSeconds() < 10) {
+                second = '0' + date.getSeconds();
+            } else {
+                second = date.getSeconds();
+            };
+
+
+
+            // document.write(`${year}-${month}-${day} ${hour}:${minute}:${second}`);   
+            let record = document.getElementById('record');
+            let result = document.getElementById('txt');
+
+            let j = Math.floor(Math.random() * 10);
+            console.log(loveArr[j])
+            // console.log(result) result是印出選擇的結果
+            // result.style.color= '#ff0000';
+            var newList = document.createElement('li');
+           
+            var textNode = document.createTextNode(`${year}-${month}-${day} ${hour}:${minute}:${second} \n 與 ${result.innerText} ${loveArr[j]}`)
+            // var textNode = document.createTextNode(year+"-"+month+"-"+day +hour+":"+{minute}+":"+second+ )
+            //  上述不能僅寫${result}他只會找到元素標籤 ，要寫 ${result.innerText} 
+            newList.appendChild(textNode);
+            
+            newList.style.borderBottom = '1px solid #e6e6e6'
+            record.appendChild(newList);
+
+            //下面這兩行 將最新新增的移最前面
+            // var front = document.querySelectorAll('li')[0];
+            // record.insertBefore(newList, front);
+
+
+        }
+//筆記  :要有模組化的概念  要多做甚麼 給他function  每次去傳回值
+//需要做的  .時間戳記   .文字結果   
+
+
+    </script>
+
+
+</body>
+
+</html>
