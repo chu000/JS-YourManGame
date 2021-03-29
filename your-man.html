@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://chu000.github.io/JS-YourManGame/your-man.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://chu000.github.io/JS-YourManGame/your-man.html">
-    
+
     <link rel="stylesheet" href="./css/layout_desktop.css" type="text/css" />
     <link rel="stylesheet" href="./css/layout_mobile.css" type="text/css" />
 
@@ -23,7 +23,8 @@
 <body>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="1k5n3My8"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0"
+        nonce="1k5n3My8"></script>
     <!-- <div class="line-it-button" style="display: none;" data-type="share-a" data-lang="zh-Hant" ></div> -->
     <!-- Load line -->
     <!-- <script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script> -->
@@ -61,33 +62,37 @@
             </ul>
         </div>
     </div>
-    
-    <footer>（圖片轉載自網路）<img class="love-icon" src="/img/love.png" alt="">
+
+    <footer>（圖片轉載自網路）<img class="love-icon" src="./img/love.png" alt="">
         <div id="share">
-        <div class="fb-share-button" data-href="https://chu000.github.io/JS-YourManGame/your-man.html" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div>
-    </div>
+            <div class="fb-share-button" data-href="https://chu000.github.io/JS-YourManGame/your-man.html"
+                data-layout="button" data-size="small"><a target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                    class="fb-xfbml-parse-ignore">分享</a></div>
+        </div>
     </footer>
 
     <!-- fb分享 -->
-  
 
 
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0" nonce="RehIC4y6"></script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0"
+        nonce="RehIC4y6"></script>
     <!-- line分享 -->
     <!-- <a href="javascript: void(window.open(&apos;https://lineit.line.me/share/ui?url=&apos; .concat(encodeURIComponent(location.href)) ));" title="分享給 LINE 好友"><img alt="分享給LINE好友 !" height="40" src="https://1.bp.blogspot.com/-FvoBw8lnlC8/WHgA91RmxiI/AAAAAAAAIvA/CazIGx6Jlp8PJ4pE40kt2XMxwFmeBSdjgCLcB/s1600/168x40.png" width="168" /></a> -->
     <script>
 
 
-        let arrManPic = ['<img src="/img/man (1).jpg" >',
-            '<img src="/img/man (2).jpg" >',
-            '<img src="/img/man (3).jpg" >',
-            '<img src="/img/man (4).jpg" >',
-            '<img src="/img/man (5).jpg" >',
-            '<img src="/img/man (6).jpg" >',
-            '<img src="/img/man (7).jpg" >',
-            '<img src="/img/man (8).jpg" >',
-            '<img src="/img/man (9).jpg" >',
-            '<img src="/img/man (10).jpg" >',
+        let arrManPic = ['<img src="./img/man (1).jpg" >',
+            '<img src="./img/man (2).jpg" >',
+            '<img src="./img/man (3).jpg" >',
+            '<img src="./img/man (4).jpg" >',
+            '<img src="./img/man (5).jpg" >',
+            '<img src="./img/man (6).jpg" >',
+            '<img src="./img/man (7).jpg" >',
+            '<img src="./img/man (8).jpg" >',
+            '<img src="./img/man (9).jpg" >',
+            '<img src="./img/man (10).jpg" >',
         ];
 
         // function getRandom(x){
@@ -273,11 +278,11 @@
             newList.appendChild(textNode);
 
             newList.style.borderBottom = '1px solid #e6e6e6'
-            record.appendChild(newList);
+            // record.appendChild(newList);
 
             //下面這兩行 將最新新增的移最前面
-            // var front = document.querySelectorAll('li')[0];
-            // record.insertBefore(newList, front);
+            var front = document.querySelectorAll('li')[0];
+            record.insertBefore(newList, front);
 
 
         }
