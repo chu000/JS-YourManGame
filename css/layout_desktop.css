@@ -201,8 +201,11 @@ footer p{
    
 
 }
-.saw span{
-    font-size: 13px;
+.saw {
+    position: absolute;
+    bottom: 80%;
+    font-size: 0.6rem;
     color: #d6d6d6;
-    margin-left: 2%;
+    font-weight: 500;
+  left: 3%;
 }
