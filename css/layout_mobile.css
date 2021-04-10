@@ -1,3 +1,19 @@
+@media(max-width:1024px){
+    .selectBox {
+       float: none;
+
+    }
+    .boxRecord {
+        max-width: 400px;
+        margin: 2% auto;
+        text-align: center;
+        float: none;
+      
+    
+    }
+
+}
+
 @media(max-width:600px){
     nav,footer {
 
